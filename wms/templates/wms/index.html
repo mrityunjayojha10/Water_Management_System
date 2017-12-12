@@ -1,0 +1,361 @@
+
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{%if user.is_authenticated%}
+	<title>{{user.username}}</title>
+{%else%}
+	<title>Home</title>
+{%endif%}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="keywords" content="Style Decor Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap-css -->
+
+
+<!-- I have loaded bootstrap cdn instead of your file -->
+
+<!-- <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" /> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+<!--// bootstrap-css -->
+<!-- css -->
+
+
+{%load static%}
+<link rel="stylesheet" href="{% static 'wms/home/css/style.css'%}" type="text/css" media="all" />
+<link rel="stylesheet" href="{% static 'wms/home/css/flexslider.css'%}" type="text/css" media="screen" property="" />
+<!--// css -->
+<!-- font-awesome icons -->
+
+<!-- //font-awesome icons -->
+<!-- font -->
+<link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<!-- //font -->
+<script type="text/javascript" src="{% static 'wms/home/js/jquery-2.1.4.min.js'%}"></script>
+<style type="text/css">
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+.wid{
+	width: 25em !important;
+}
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid black;
+    display: inline-block;
+    font-weight:normal;
+    font-family:'Josefin Sans', sans-serif !important;
+    padding: 4px;
+    cursor: pointer;
+}
+div.ui-btn input[type="submit"] {
+ border:1px solid black !important;
+ text-decoration:none !important;
+ font-family:'Josefin Sans', sans-serif !important;
+ text-align: center !important;
+ font-size: 20px;
+ color:#0cdbff !important;
+ background:white !important;
+}
+.fileContainer{
+	cursor: inherit;
+	font-weight:normal;
+	overflow: hidden;
+	z-index: -1;
+	font-family: 'Josefin Sans', sans-serif;
+	background-color: #fff;
+	display: block;
+}
+.blu{
+  color: #0cdbff;
+
+}
+
+			
+			#video-bg-elem {
+				position: absolute;
+				top: 0;
+				left: 0;
+				min-height: 100%;
+				min-width: 100%;
+			}
+
+.wrap {
+  z-index: 5;
+  position: absolute;
+  overflow: hidden;
+  top: 10%;
+  right: 10%;
+  bottom: 85px;
+  left: 10%;
+  padding: 20px 50px;
+  display: block;
+  border-radius: 4px;
+  transform: translateY(20px);
+  transition: all 0.5s;
+  visibility: hidden;
+}
+.wrap .content {
+  z-index: 5;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center; 
+  opacity: 0;
+}
+.wrap:before {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: white;
+  content: "";
+  bottom: 10px;
+  left: 50%;
+  top: 95%;
+  color: #fff;
+  border-radius: 50%;
+  -webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrap.active {
+  z-index: 5;
+  display: block;
+  visibility: visible;
+  box-shadow: 2px 3px 16px silver;
+  transition: all 600ms;
+  transform: translateY(0px);
+  transition: all 0.5s;
+}
+.wrap.active:before {
+  z-index: -3;
+  height: 2100px;
+  width: 2000px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  margin-left: -1000px;
+  margin-top: -1000px;
+  display: block;
+  -webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrap.active .content {
+  z-index: 0;
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+  transition: all 600ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.weel.button {
+  z-index: 5;
+  padding: 11px 11px 13px 13px;
+  outline: none;
+  border-radius: 50%;
+  background: #0cdbff;
+  color: #fff;
+  font-size: 24px;
+  display: block;
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  top: auto;
+  margin-left: -25px;
+  transition: transform 1.25s;
+}
+.weel.button:hover {
+  z-index: 5;
+  text-decoration: none;
+  background: #fff;
+  color: #0cdbff;
+   transition: transform 0.25s;
+}
+.weel.button.active {
+  z-index: 5;
+  transform: rotate(135deg);
+  transition: transform 0.5s;
+}
+</style>
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+	<!-- banner -->
+	<div class="banner jarallax">
+		<div class="agileinfo-dot">
+			
+			<div class="header">
+				<div class="container">
+					<div class="header-top-grids">
+						<div class="agileits-logo">
+							<h1><a href="{%url 'wms:index'%}">GROUP 7</a></h1>
+						</div>
+						<div class="top-nav">
+							<nav class="navbar navbar-default">
+								<!-- Brand and toggle get grouped for better mobile display -->
+								<div class="navbar-header">
+									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+								</div>
+								<!-- Collect the nav links, forms, and other content for toggling -->
+								<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+									<nav>
+										<ul class="nav navbar-nav">
+											<li class="active"><a href="{%url 'wms:index' %}">Home</a></li>
+											<li>
+												<a href="{%url 'wms:about'%}">About</a>
+											</li>
+												{%if user.is_authenticated%}
+
+                                            <li><a href="{%url 'wms:add_plant'%}">Add Plant</a></li>
+											<li><a href="{%url 'wms:plants'%}">Plants</a></li>
+										
+											
+											{%endif%}
+												<!-- <li><a href="#">Profile</a></li> -->
+													<li>
+													{% if user.is_authenticated%}
+													<a href="{%url 'wms:logout_user'%}">Log out</a>
+													{%else%}
+													<a href="{%url 'wms:login_user'%}">Log in</a>
+													{%endif%}
+												</li>
+											
+											
+										</ul>
+									</nav>
+								</div>
+								<!-- /.navbar-collapse -->
+							</nav>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="w3layouts-banner">
+			<!--	<div class="background-wrap">
+					<video id="video-bg-elem" preload="auto" autoplay="true" loop="loop"  > 
+						<source src="{% static 'wms/home/images/KNOW_The Future of Farming.mp4' %}" type="video/mp4">
+					</video>          
+				</div>-->
+				<div class="container">
+					<section class="slider">
+						<div class="flexslider">
+							<ul class="slides">
+								<li>
+									<div class="agileits_w3layouts_banner_info">
+										<h3>What is IoT</h3>
+										<p>"The Internet of Things is not a concept; it is a network, the true technology-enabled Network of all networks." – Edewede Oriwoh</p>
+									</div>
+								</li>
+								<li>
+									<div class="agileits_w3layouts_banner_info">
+										<h3>Why IoT for Plants</h3>
+										<p>"Plants don't have a brain because they are not going anywhere." ― Robert Sylwester</p>
+									</div>
+								</li>
+								<li>
+									<div class="agileits_w3layouts_banner_info">
+										<h3>Water Conservation</h3>
+										<p>"I hope people will learn more about agriculture in India. About locally and globally grown farming and about water conservation." ― Someone</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+				</section>
+			<!-- flexSlider -->
+				<script defer src="{% static 'wms/home/js/jquery.flexslider.js'%}"></script>
+				<script type="text/javascript">
+					$(window).load(function(){
+					  $('.flexslider').flexslider({
+						animation: "slide",
+						start: function(slider){
+						  $('body').removeClass('loading');
+						}
+					  });
+					});
+				</script>
+			<!-- //flexSlider -->
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //banner -->
+	<!-- banner-bottom --
+<!-- //footer -->
+	<!-- jarallax -->
+	<div class='wrap'>
+  <div class='content'>
+    
+    <form action="/action_page.php">
+  <fieldset style="padding-top:0;">
+    <legend><h2>ADD <span class="blu">PLANT DATA</span></h2></legend>
+    FIRST <span class="blu">NAME</span>:&emsp;&emsp;
+    <input type="text" name="firstname" value="" class="wid">
+    <br><br>
+    LAST <span class="blu">NAME</span>: &emsp;&emsp;
+    <input type="text" name="lastname" value="" class="wid">
+    <br><br>
+    CONTACT <span class="blu">NO.</span>:&emsp;&nbsp;
+    <input type="tel" name="Contact" value="" class="wid" maxlength="10">
+    <br><br>
+    EMAIL <span class="blu">ID</span>:&emsp;&nbsp;:&emsp;&emsp;
+    <input type="email" name="email" value="" class="wid">
+    <br><br>
+    C<span class="blu">IT</span>Y: &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
+    <input type="text" name="lastname" value="" class="wid">
+    <br><br>
+    COUN<span class="blu">TRY</span>: &emsp;&emsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" name="lastname" value="" class="wid">
+    <br><br>
+    
+    UPLOAD <span class="blu">PLANT IMAGE</span>:<br>
+    	
+     <label class="custom-file-upload">
+    <input type="file" name="pic" accept="image/*">
+    UPLOAD <span class="blu">IMAGE</span>
+</label>
+    
+    <br><center>
+    <div class="ui-btn">
+    <input type="submit" value="SUBMIT" class="fileContainer"></div></center>
+  </fieldset>
+</form>
+  </div>
+</div>
+	<!-- {%if user.is_authenticated%}
+	<a class='button glyphicon glyphicon-plus weel' href='#'></a>
+	<script src="{% static 'wms/home/js/SmoothScroll.min.js'%}"></script>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script type="text/javascript">
+	$('.weel').on('click', function(){
+		$('.wrap, .weel').toggleClass('active');
+		return false;
+	});
+	</script>
+	{%endif%} -->
+	<!-- //jarallax -->
+	
+<!-- //here ends scrolling icon -->
+</body>	
+</html>
